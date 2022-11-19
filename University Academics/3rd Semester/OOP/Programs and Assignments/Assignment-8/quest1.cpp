@@ -6,7 +6,6 @@ class quest1
 private:
     int feet,inches;
 public:
-
     quest1(){
     feet=0;
     inches=0;        
@@ -38,6 +37,25 @@ public:
     }  
 };
 
+class quest1b
+{
+private:
+    int x;
+public:
+    quest1b(){
+        cout<<"Enter Value to be Decremented"<<endl;
+        cin>>x;
+        cout<<"Value of X before Decrementation is "<<x<<endl;
+    }
+    quest1b operator--(){
+        --x;
+        return *this;
+    }
+    void show(){
+        cout<<"Value of X after Decrementation is "<<x<<endl;
+    }
+};
+
 int main()
 {
     quest1 q1(23,8.6),q2(34,2.4);
@@ -47,5 +65,9 @@ int main()
     quest1 q4;
     q4=5+q2;
     q4.show();
+    cout<<"Part-b"<<endl;
+    quest1b q1b;
+    --q1b;
+    q1b.show();
     return 0;
 }
