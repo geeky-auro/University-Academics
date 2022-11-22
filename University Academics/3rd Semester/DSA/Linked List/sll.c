@@ -57,9 +57,18 @@ void printData(){
     node *ptr=head;
     do
     {
-        printf("Data is [%d] \n",ptr->data);
+        printf("Data is [%5d] \n",ptr->data);
         ptr=ptr->next;
     } while (ptr!=NULL);
+    
+}
+
+int countNodes(node *head){
+    if (head==NULL)
+    {
+        return 0;
+    }
+    return 1+countNodes(head->next);
     
 }
 
@@ -73,6 +82,8 @@ int main(){
     createNode();
     }
     printf("Enter No. of Nodes to be Inserted \n");
+    node *head1=head;
+    printf("No. of Nodes Present is %d \n",countNodes(head1));
     printData();
     return 0;
 }
